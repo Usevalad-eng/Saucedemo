@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertTrue;
 
 public class AuthTest extends BaseTest{
-    private static final String URL = "https://the-internet.herokuapp.com/login";
+    private static final String URL = "https://www.saucedemo.com/";
 
     @Test
     public void loginPageEnteringSuccess(){

@@ -1,3 +1,4 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
@@ -15,7 +16,9 @@ public class FirstTest extends BaseTest{
 
     @Test
     public void firstTest() {
-        driver.get("https://www.onliner.by/");
+        driver.get("https://www.saucedemo.com/");
+        driver.findElement(By.id("user-name"));
+        driver.findElement(By.xpath("//input[@id='user-name']"));
         driver.quit();
     }
 
