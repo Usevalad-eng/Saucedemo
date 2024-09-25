@@ -26,6 +26,8 @@ public class AddToBasketAndCheckItem extends BaseTest {
         WebElement logo = driver.findElement(By.cssSelector("[class='app_logo']"));
         assertTrue(logo.isDisplayed(), "You are not entered the system");
         //assertFalse(logo.isEnabled(), "error");
+        //driver.findElement(By.linkText(""));
+        //driver.findElement(By.partialLinkText(""));
     }
 
     @Test
