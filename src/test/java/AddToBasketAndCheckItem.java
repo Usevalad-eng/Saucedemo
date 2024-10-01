@@ -32,7 +32,15 @@ public class AddToBasketAndCheckItem extends BaseTest {
 
     @Test
     public void addItemToBasketAndCheck() {  //Task2.2
-        clickOnForm();
+        //clickOnForm();
+        driver.get("https://www.saucedemo.com/");
+        WebElement username = driver.findElement(By.xpath("//*[@id='user-name']"));
+        username.sendKeys("standard_user");
+        WebElement password = driver.findElement(PASS);
+        password.sendKeys("secret_sauce");
+        WebElement loginButton = driver.findElement(By.id("login-button"));
+        loginButton.click();
+
         WebElement addToCartButton = driver.findElement(By.id("add-to-cart-sauce-labs-backpack"));
         addToCartButton.click();
         WebElement basketButton = driver.findElement(By.xpath("//a[@data-test='shopping-cart-link']"));
