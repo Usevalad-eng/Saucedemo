@@ -1,4 +1,4 @@
-# SaucedemoRepo
+# Saucedemo
 ## Checklist:
 ## Login page:
 1. Login using valid password and username.
