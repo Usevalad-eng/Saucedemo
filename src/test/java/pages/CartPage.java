@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class CartPage extends BasePage{
+public class CartPage extends BasePage {
     public CartPage(WebDriver driver) {
         super(driver);
     }
@@ -12,11 +12,11 @@ public class CartPage extends BasePage{
 
     public static final By FIRST_ITEM_PRICE = By.cssSelector("[data-test='inventory-item-price']");
 
-    public String getFirstItem(){
+    public String getFirstItem() {
         return driver.findElement(FIRST_ITEM).getText();
     }
 
-    public String getFirstItemPrice(){
+    public String getFirstItemPrice() {
         return driver.findElement(FIRST_ITEM_PRICE).getText();
     }
 }

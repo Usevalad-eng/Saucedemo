@@ -5,37 +5,29 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class AuthTestSaucedemo extends BaseTestSaucedemo{
+public class AuthTestSaucedemo extends BaseTestSaucedemo {
 
     public String passFieldIsEmptyMessage = "Epic sadface: Password is required";
 
     @Test
-    public void userShouldBeAuthorisedUsingValidData(){
+    public void userShouldBeAuthorisedUsingValidData() {
         authPage.open();
         authPage.inputLoginAndPassword("standard_user", "secret_sauce");
         authPage.clickLoginButton();
         inventoryPage.inventoryPageIsOpen();
-        /*WebElement products = driver.findElement(By.xpath("//span[text()='Products']"));
-        String actualTextMessage = products.getText();
-        assertEquals(actualTextMessage, "Products", "You are not in the system");*/
-        //driver.get("");
-        //driver.findElement(By.id("")).sendKeys("");
-        //driver.findElement(By.id("")).sendKeys("");
-        //driver.findElement(By.id("")).click();
-        //assertEquals(true, true);
     }
 
-    @Test
+   /* @Test
     public void userShouldBeAuthorisedUsingValidDataV2(){
         authPage.open();
         authPage.inputLoginAndPasswordNotVoid("standard_user", "secret_sauce")
                 .clickLoginButtonNotVoid();
         boolean pageIsOpen = inventoryPage.inventoryPageIsOpen();
         assertTrue(pageIsOpen, "Inventory page is not open");
-    }
+    }*/
 
     @Test
-    public void userShouldNotBeAuthorisedUsingInvalidDataPasswordIsEmpty(){
+    public void userShouldNotBeAuthorisedUsingInvalidDataPasswordIsEmpty() {
         authPage.open();
         authPage.inputLoginAndPassword("standard_user", "");
         authPage.clickLoginButton();
@@ -43,17 +35,17 @@ public class AuthTestSaucedemo extends BaseTestSaucedemo{
         assertEquals(errorMessage, passFieldIsEmptyMessage, "Password is required");
     }
 
-    @Test
+    /*@Test
     public void userShouldNotBeAuthorisedUsingInvalidDataPasswordIsEmptyV2(){
         String errorMessage = authPage.openNotVoid()
                 .inputLoginAndPasswordNotVoid("standard_user", "")
                 .clickLoginButtonNotVoid()
                 .getErrorMessage();
         assertEquals(errorMessage, passFieldIsEmptyMessage, "Passwore is required");
-    }
+    }*/
 
     @Test
-    public void userShouldNotBeAuthorisedUsingInvalidDataUsernameIsEmpty(){
+    public void userShouldNotBeAuthorisedUsingInvalidDataUsernameIsEmpty() {
         authPage.open();
         authPage.inputLoginAndPassword("", "secret_sauce");
         authPage.clickLoginButton();
@@ -62,7 +54,7 @@ public class AuthTestSaucedemo extends BaseTestSaucedemo{
     }
 
     @Test
-    public void userShouldNotBeAuthorisedUsingInvalidDataUsernameAndPasswordAreEmpty(){
+    public void userShouldNotBeAuthorisedUsingInvalidDataUsernameAndPasswordAreEmpty() {
         authPage.open();
         authPage.inputLoginAndPassword("", "secret_sauce");
         authPage.clickLoginButton();
@@ -71,7 +63,7 @@ public class AuthTestSaucedemo extends BaseTestSaucedemo{
     }
 
     @Test
-    public void userShouldNotBeAuthorisedUsingInvalidData(){
+    public void userShouldNotBeAuthorisedUsingInvalidData() {
         authPage.open();
         authPage.inputLoginAndPassword("name", "password");
         authPage.clickLoginButton();

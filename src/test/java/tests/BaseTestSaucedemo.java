@@ -12,9 +12,9 @@ import pages.InventoryPage;
 import java.time.Duration;
 
 public class BaseTestSaucedemo {
-    WebDriver driver;
-    AuthPage authPage;
-    InventoryPage inventoryPage;
+    protected WebDriver driver;
+    protected AuthPage authPage;
+    protected InventoryPage inventoryPage;
 
     CartPage cartPage;
 

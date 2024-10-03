@@ -4,10 +4,10 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class CheckItem extends BaseTestSaucedemo{
+public class CartTestSaucedemo extends BaseTestSaucedemo {
 
     @Test
-    public void checkItem(){
+    public void checkItem() {
         authPage.open();
         authPage.inputLoginAndPassword("standard_user", "secret_sauce");
         authPage.clickLoginButton();
