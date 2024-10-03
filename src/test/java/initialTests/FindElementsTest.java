@@ -1,5 +1,7 @@
+package initialTests;
+
+import initialTests.BaseTest;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 public class FindElementsTest extends BaseTest {

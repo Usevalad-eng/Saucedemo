@@ -1,3 +1,5 @@
+package initialTests;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
@@ -7,8 +9,8 @@ import static org.testng.Assert.assertTrue;
 
 public class AddToBasketAndCheckItem extends BaseTest {
 
-    private String uname = "%s";
-    private static final By PASS = By.id("password");
+    protected String uname = "%s";
+    protected static final By PASS = By.id("password");
 
     @Test
     public void clickOnForm() {  //Task2.1
