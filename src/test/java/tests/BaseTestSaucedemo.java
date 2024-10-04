@@ -11,11 +11,11 @@ import pages.InventoryPage;
 import java.time.Duration;
 
 public class BaseTestSaucedemo {
+
     protected WebDriver driver;
     protected AuthPage authPage;
     protected InventoryPage inventoryPage;
-
-    CartPage cartPage;
+    protected CartPage cartPage;
 
     @BeforeMethod
     public void setUp() {
