@@ -2,6 +2,9 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
+import static pages.InventoryPage.PRODUCT_LABEL;
 
 public class AuthPage extends BasePage {
 
@@ -19,20 +22,11 @@ public class AuthPage extends BasePage {
         driver.findElement(USERNAME).sendKeys(name);
         driver.findElement(PASSWORD).sendKeys(password);
     }
-    /*public AuthPage inputLoginAndPasswordNotVoid(String name, String password){
-        driver.findElement(USERNAME).sendKeys(name);
-        driver.findElement(PASSWORD).sendKeys(password);
-        return this;
-    }*/
 
     public void clickLoginButton() {
         driver.findElement(LOGIN_BUTTON).click();
     }
 
-    /*public AuthPage clickLoginButtonNotVoid(){
-        driver.findElement(LOGIN_BUTTON).click();
-        return this;
-    }*/
     public String getErrorMessage() {
         return driver.findElement(ERROR_MESSAGE).getText();
     }
@@ -40,8 +34,12 @@ public class AuthPage extends BasePage {
     public void open() {
         driver.get(URL);
     }
-    /*public AuthPage openNotVoid(){
+
+    public void login() {
         driver.get(URL);
-        return this;
-    }*/
+        driver.findElement(USERNAME).sendKeys("standard_user");
+        driver.findElement(PASSWORD).sendKeys("secret_sauce");
+        driver.findElement(LOGIN_BUTTON).click();
+        Assert.assertTrue(driver.findElement(PRODUCT_LABEL).isDisplayed());
+    }
 }

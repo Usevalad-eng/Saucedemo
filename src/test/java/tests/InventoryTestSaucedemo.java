@@ -6,11 +6,11 @@ public class InventoryTestSaucedemo extends BaseTestSaucedemo {
 
     @Test
     public void loginAndAddToBasket() {
-        authPage.open();
-        authPage.inputLoginAndPassword("standard_user", "secret_sauce");
-        authPage.clickLoginButton();
-        inventoryPage.inventoryPageIsOpen();
+        authPage.login();
         inventoryPage.clickAddToCartButton();
+        //inventoryPage.getItemAndClickAddToCartButton("Sauce Labs Backpack"); //todo
         inventoryPage.clickBasketButton();
+        driver.navigate().back();
+        inventoryPage.inventoryPageIsOpen();
     }
 }

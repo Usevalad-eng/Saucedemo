@@ -3,7 +3,6 @@ package tests;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
-import static org.testng.Assert.assertTrue;
 
 public class AuthTestSaucedemo extends BaseTestSaucedemo {
 
@@ -17,15 +16,6 @@ public class AuthTestSaucedemo extends BaseTestSaucedemo {
         inventoryPage.inventoryPageIsOpen();
     }
 
-   /* @Test
-    public void userShouldBeAuthorisedUsingValidDataV2(){
-        authPage.open();
-        authPage.inputLoginAndPasswordNotVoid("standard_user", "secret_sauce")
-                .clickLoginButtonNotVoid();
-        boolean pageIsOpen = inventoryPage.inventoryPageIsOpen();
-        assertTrue(pageIsOpen, "Inventory page is not open");
-    }*/
-
     @Test
     public void userShouldNotBeAuthorisedUsingInvalidDataPasswordIsEmpty() {
         authPage.open();
@@ -34,15 +24,6 @@ public class AuthTestSaucedemo extends BaseTestSaucedemo {
         String errorMessage = authPage.getErrorMessage();
         assertEquals(errorMessage, passFieldIsEmptyMessage, "Password is required");
     }
-
-    /*@Test
-    public void userShouldNotBeAuthorisedUsingInvalidDataPasswordIsEmptyV2(){
-        String errorMessage = authPage.openNotVoid()
-                .inputLoginAndPasswordNotVoid("standard_user", "")
-                .clickLoginButtonNotVoid()
-                .getErrorMessage();
-        assertEquals(errorMessage, passFieldIsEmptyMessage, "Passwore is required");
-    }*/
 
     @Test
     public void userShouldNotBeAuthorisedUsingInvalidDataUsernameIsEmpty() {

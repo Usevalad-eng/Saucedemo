@@ -8,10 +8,8 @@ public class CartTestSaucedemo extends BaseTestSaucedemo {
 
     @Test
     public void checkItem() {
-        authPage.open();
-        authPage.inputLoginAndPassword("standard_user", "secret_sauce");
-        authPage.clickLoginButton();
-        inventoryPage.inventoryPageIsOpen();
+
+        authPage.login();
         inventoryPage.clickAddToCartButton();
         inventoryPage.clickBasketButton();
 
