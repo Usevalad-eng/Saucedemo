@@ -3,8 +3,7 @@ package initialTests;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
-public class FindElementsTest extends BaseTest {
-
+public class FindElementsTest extends Base_Test {
     @Test
     public void firstTest() {  //Task1
         driver.get("https://www.saucedemo.com/");

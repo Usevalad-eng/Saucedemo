@@ -2,13 +2,11 @@ package tests;
 
 import org.testng.annotations.Test;
 
-public class InventoryTestSaucedemo extends BaseTestSaucedemo {
-
+public class InventoryTest extends BaseTest {
     @Test
     public void loginAndAddToBasket() {
         authPage.login();
-        inventoryPage.clickAddToCartButton();
-        //inventoryPage.getItemAndClickAddToCartButton("Sauce Labs Backpack"); //todo
+        inventoryPage.getItemAndClickAddToCartButton("Sauce Labs Backpack");
         inventoryPage.clickBasketButton();
         driver.navigate().back();
         inventoryPage.inventoryPageIsOpen();

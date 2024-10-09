@@ -1,10 +1,12 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.AuthPage;
 
 import static org.testng.Assert.assertEquals;
 
-public class AuthTestSaucedemo extends BaseTestSaucedemo {
+public class AuthTest extends BaseTest {
 
     public String passFieldIsEmptyMessage = "Epic sadface: Password is required";
 
@@ -50,5 +52,16 @@ public class AuthTestSaucedemo extends BaseTestSaucedemo {
         authPage.clickLoginButton();
         String errorMessage = authPage.getErrorMessage();
         assertEquals(errorMessage, "Epic sadface: Username and password do not match any user in this service");
+    }
+
+    @Test
+    public void lockedUserShouldNotBeAuthorised(){
+        authPage.open();
+        authPage.inputLoginAndPassword("locked_out_user", "secret_sauce");
+        authPage.clickLoginButton();
+        String errorMessage = authPage.getErrorMessage();
+        Assert.assertEquals(errorMessage, "Epic sadface: Sorry, this user has been locked out.", "Not OK!");
+        authPage.clickCloseErrorMessageButton();
+        Assert.assertTrue(authPage.errorMessageBlockIsClosed(), "something went wrong!");
     }
 }

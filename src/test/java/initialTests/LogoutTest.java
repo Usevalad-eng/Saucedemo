@@ -6,16 +6,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.AuthPage;
-import tests.BaseTestSaucedemo;
+import tests.BaseTest;
 
 import java.time.Duration;
 
 import static pages.AuthPage.*;
-import static pages.InventoryPage.PRODUCT_LABEL;
 
-public class Logout extends BaseTestSaucedemo {
-
+public class LogoutTest extends BaseTest {
     @Test
     public void logoutTest() {
         driver.get(URL);

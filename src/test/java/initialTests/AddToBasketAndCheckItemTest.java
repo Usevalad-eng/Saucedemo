@@ -7,8 +7,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
-public class AddToBasketAndCheckItem extends BaseTest {
-
+public class AddToBasketAndCheckItemTest extends Base_Test {
     private String uname = "%s";
     private static final By PASS = By.id("password");
 

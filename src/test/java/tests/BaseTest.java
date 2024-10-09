@@ -10,7 +10,7 @@ import pages.InventoryPage;
 
 import java.time.Duration;
 
-public class BaseTestSaucedemo {
+public class BaseTest {
 
     protected WebDriver driver;
     protected AuthPage authPage;
@@ -21,7 +21,7 @@ public class BaseTestSaucedemo {
     public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(4));
         authPage = new AuthPage(driver);
         inventoryPage = new InventoryPage(driver);
         cartPage = new CartPage(driver);
