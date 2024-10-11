@@ -1,6 +1,8 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -25,4 +27,21 @@ public class BasePage {
             }
         };
     }
+    protected boolean isPageExist(By element) {
+        return driver.findElement(element).isDisplayed();
+    }
+
+    protected boolean isPageOpened(By element) {
+        return isPageExist(element);
+    }
+
+    protected boolean isPageExistV2(By element) {
+        try {
+            return driver.findElement(element).isDisplayed();
+        }catch (NoSuchElementException exception){
+            System.out.println("No such element");
+            return false;
+        }
+    }
 }
+

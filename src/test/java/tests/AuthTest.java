@@ -13,7 +13,44 @@ public class AuthTest extends BaseTest {
     @Test
     public void userShouldBeAuthorisedUsingValidData() {
         authPage.open();
+        authPage.isPageOpened();
         authPage.inputLoginAndPassword("standard_user", "secret_sauce");
+        authPage.clickLoginButton();
+        inventoryPage.inventoryPageIsOpen();
+    }
+
+    @Test
+    public void problemUserShouldBeAuthorisedUsingValidData() {
+        authPage.open();
+        authPage.isPageOpened();
+        authPage.inputLoginAndPassword("problem_user", "secret_sauce");
+        authPage.clickLoginButton();
+        inventoryPage.inventoryPageIsOpen();
+    }
+
+    @Test
+    public void performanceUserShouldBeAuthorisedUsingValidData() {
+        authPage.open();
+        authPage.isPageOpened();
+        authPage.inputLoginAndPassword("performance_glitch_user", "secret_sauce");
+        authPage.clickLoginButton();
+        inventoryPage.inventoryPageIsOpen();
+    }
+
+    @Test
+    public void errorUserShouldBeAuthorisedUsingValidData() {
+        authPage.open();
+        authPage.isPageOpened();
+        authPage.inputLoginAndPassword("error_user", "secret_sauce");
+        authPage.clickLoginButton();
+        inventoryPage.inventoryPageIsOpen();
+    }
+
+    @Test
+    public void visualUserShouldBeAuthorisedUsingValidData() {
+        authPage.open();
+        authPage.isPageOpened();
+        authPage.inputLoginAndPassword("visual_user", "secret_sauce");
         authPage.clickLoginButton();
         inventoryPage.inventoryPageIsOpen();
     }

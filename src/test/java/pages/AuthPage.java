@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -37,6 +36,10 @@ public class AuthPage extends BasePage {
 
     public void open() {
         driver.get(URL);
+    }
+
+    public boolean isPageOpened() {
+        return isPageExist(LOGIN_BUTTON);
     }
 
     public void login() {
