@@ -1,6 +1,7 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,7 +9,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 
 public class CartTest extends BaseTest {
-    @Test
+    @Test(retryAnalyzer = Retry.class)
     public void checkItem() {
         authPage.login();
         inventoryPage.clickAddToCartButton();
@@ -30,8 +31,8 @@ public class CartTest extends BaseTest {
         assertEquals(firstItem, "Sauce Labs Backpack", "Error, not right item added.");
         String firstItemPrice = cartPage.getFirstItemPrice();
         assertEquals(firstItemPrice, "$29.99", "Error, not right item added (cost is not equal).");
-        driver.findElement(By.id("checkout"));
-        //assert todo
+        WebElement checkoutButton = driver.findElement(By.id("checkout"));
+        Assert.assertTrue(checkoutButton.isDisplayed());
     }
 
     @Test

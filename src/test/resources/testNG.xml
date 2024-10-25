@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test suite" parallel="tests" thread-count="2">
+    <!--<listeners>
+        <listener class-name="tests.AnnotationTransformer"/>
+    </listeners>-->
+    <test name="test 1 auth tests">
+        <parameter name="browser" value="chrome"></parameter>
+        <!--<groups>
+            <run>
+                <include name="slow" />
+            </run>
+        </groups>-->
+        <classes>
+            <class name="tests.AuthTest" />
+        </classes>
+    </test> <!-- Test -->
+    <test name="test 2 cart tests">
+        <parameter name="browser" value="edge"></parameter>
+        <classes>
+            <class name="tests.CartTest" />
+        </classes>
+    </test> <!-- Test -->
+</suite>

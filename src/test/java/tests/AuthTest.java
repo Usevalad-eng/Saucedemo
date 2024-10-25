@@ -37,7 +37,7 @@ public class AuthTest extends BaseTest {
         inventoryPage.inventoryPageIsOpen();
     }
 
-    @Test
+    @Test(description = "error user test")
     public void errorUserShouldBeAuthorisedUsingValidData() {
         authPage.open();
         authPage.isPageOpened();
