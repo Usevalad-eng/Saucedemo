@@ -99,6 +99,6 @@ public class AuthTest extends BaseTest {
         String errorMessage = authPage.getErrorMessage();
         Assert.assertEquals(errorMessage, "Epic sadface: Sorry, this user has been locked out.", "Not OK!");
         authPage.clickCloseErrorMessageButton();
-        Assert.assertTrue(authPage.errorMessageBlockIsClosed(), "something went wrong!");
+        Assert.assertTrue(authPage.errorMessageBlockIsClosed(), "Something went wrong!");
     }
 }
