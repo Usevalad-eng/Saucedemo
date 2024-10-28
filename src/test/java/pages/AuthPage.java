@@ -2,6 +2,8 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
@@ -12,6 +14,10 @@ public class AuthPage extends BasePage {
     public static final By USERNAME = By.id("user-name");
     public static final By PASSWORD = By.id("password");
     public static final By LOGIN_BUTTON = By.id("login-button");
+
+    @FindBy(id = "login-button")
+    WebElement loginButton;
+
     public static final By ERROR_MESSAGE = By.xpath("//h3[@data-test='error']");
 
     public static final By CLOSE_ERROR_MESSAGE = By.xpath("//button[@class='error-button']");
@@ -28,6 +34,10 @@ public class AuthPage extends BasePage {
 
     public void clickLoginButton() {
         driver.findElement(LOGIN_BUTTON).click();
+    }
+
+    public void clickLogin(){
+        loginButton.click();
     }
 
     public String getErrorMessage() {

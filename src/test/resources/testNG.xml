@@ -6,19 +6,22 @@
     </listeners>-->
     <test name="test 1 auth tests">
         <parameter name="browser" value="chrome"></parameter>
+        <parameter name="login" value="standard_user"></parameter>
         <!--<groups>
             <run>
-                <include name="slow" />
+                <include name="fast" />
+                <exclude name="slow" />
             </run>
         </groups>-->
         <classes>
             <class name="tests.AuthTest" />
         </classes>
     </test> <!-- Test -->
-    <test name="test 2 cart tests">
+    <test name="test 2 auth tests">
         <parameter name="browser" value="edge"></parameter>
+        <parameter name="login" value="standard_user"></parameter>
         <classes>
-            <class name="tests.CartTest" />
+            <class name="tests.AuthTest" />
         </classes>
     </test> <!-- Test -->
 </suite>
