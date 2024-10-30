@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class AuthTest extends BaseTest {
+public class AuthTest extends BaseTest {  //14 tests to run
 
     public String passFieldIsEmptyMessage = "Epic sadface: Password is required";
 
@@ -124,7 +124,7 @@ public class AuthTest extends BaseTest {
     }
 
     @Test
-    public void ordinaryUserShouldBeAuthorisedUsingValidData() {
+    public void ordinaryUserShouldBeAuthorisedUsingValidData() {  //todo - make it part of 'not to test group'
         authPage.open();
         authPage.isPageOpened();
         authPage.inputLoginAndPassword("standard_user", "secret_sauce");

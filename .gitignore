@@ -70,6 +70,7 @@ cmake-build-*/
 # IntelliJ
 out/
 .idea/
+.allure/
 com/out/
 com/.idea/
 com/*.iml
@@ -79,6 +80,7 @@ target/
 Saucedemo/target/
 Saucedemo/out/
 Saucedemo/.idea/
+Sausedemo/.allure
 Saucedemo/*.iml
 
 
