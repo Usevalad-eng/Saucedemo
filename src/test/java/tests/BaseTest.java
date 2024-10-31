@@ -23,7 +23,7 @@ public class BaseTest {
     protected CheckoutCompletePage checkoutCompletePage;
 
     @Parameters({"browser"})
-    @BeforeMethod
+    @BeforeMethod(description = "settings")
     public void setUp(@Optional("chrome") String browser) {
         if (browser.equals("chrome")){
             driver = new ChromeDriver();
@@ -43,9 +43,9 @@ public class BaseTest {
         checkoutCompletePage = new CheckoutCompletePage(driver);
     }
 
-    @AfterMethod(alwaysRun = true)
+    @AfterMethod(alwaysRun = true, description = "close page")
     public void tearDown() {
-        driver.manage().deleteAllCookies();
+        //driver.manage().deleteAllCookies();
         driver.quit();
     }
 }

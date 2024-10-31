@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,10 +23,10 @@ public class AuthPage extends BasePage {
 
     public static final By CLOSE_ERROR_MESSAGE = By.xpath("//button[@class='error-button']");
 
-
     public AuthPage(WebDriver driver) {
         super(driver);
     }
+
 
     public void inputLoginAndPassword(String name, String password) {
         driver.findElement(USERNAME).sendKeys(name);
@@ -44,6 +45,7 @@ public class AuthPage extends BasePage {
         return driver.findElement(ERROR_MESSAGE).getText();
     }
 
+
     public void open() {
         driver.get(URL);
     }
@@ -51,6 +53,7 @@ public class AuthPage extends BasePage {
     public boolean isPageOpened() {
         return isPageExist(LOGIN_BUTTON);
     }
+
 
     public void login() {
         driver.get(URL);

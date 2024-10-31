@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
@@ -13,6 +14,7 @@ public class AuthTest extends BaseTest {  //14 tests to run
     public String passFieldIsEmptyMessage = "Epic sadface: Password is required";
 
     @DataProvider(name = "negative tests")
+    @Description("negative tests")
     public Object[][] inputForTask() {
         return new Object[][]{
                 {"name", "password", "Epic sadface: Username and password do not match any user in this service"},
@@ -31,7 +33,7 @@ public class AuthTest extends BaseTest {  //14 tests to run
         inventoryPage.inventoryPageIsOpen();
     }
 
-    @Test (dataProvider = "negative tests")
+    @Test (description = "negativeLoginTest", dataProvider = "negative tests")
     public void negativeLoginTest(String login, String pass, String error) {
         authPage.open();
         authPage.inputLoginAndPassword(login, pass);
@@ -49,7 +51,7 @@ public class AuthTest extends BaseTest {  //14 tests to run
         inventoryPage.inventoryPageIsOpen();
     }
 
-    @Test
+    @Test(description = "performanceUserShouldBeAuthorisedUsingValidData")
     public void performanceUserShouldBeAuthorisedUsingValidData() {
         authPage.open();
         authPage.isPageOpened();
@@ -67,7 +69,7 @@ public class AuthTest extends BaseTest {  //14 tests to run
         inventoryPage.inventoryPageIsOpen();
     }
 
-    @Test
+    @Test(description = "visual user")
     public void visualUserShouldBeAuthorisedUsingValidData() {
         authPage.open();
         authPage.isPageOpened();
@@ -76,7 +78,7 @@ public class AuthTest extends BaseTest {  //14 tests to run
         inventoryPage.inventoryPageIsOpen();
     }
 
-    @Test
+    @Test(description = "invalid data")
     public void userShouldNotBeAuthorisedUsingInvalidDataPasswordIsEmpty() {
         authPage.open();
         authPage.inputLoginAndPassword("standard_user", "");
@@ -85,7 +87,7 @@ public class AuthTest extends BaseTest {  //14 tests to run
         assertEquals(errorMessage, passFieldIsEmptyMessage, "Password is required");
     }
 
-    @Test
+    @Test(description = "invalid data")
     public void userShouldNotBeAuthorisedUsingInvalidDataUsernameIsEmpty() {
         authPage.open();
         authPage.inputLoginAndPassword("", "secret_sauce");
@@ -94,7 +96,7 @@ public class AuthTest extends BaseTest {  //14 tests to run
         assertEquals(errorMessage, "Epic sadface: Username is required", "Username is required");
     }
 
-    @Test(groups = "fast")
+    @Test(description = "empty pass", groups = "fast")
     public void userShouldNotBeAuthorisedUsingInvalidDataUsernameAndPasswordAreEmpty() {
         authPage.open();
         authPage.inputLoginAndPassword("", "");
@@ -103,7 +105,7 @@ public class AuthTest extends BaseTest {  //14 tests to run
         assertEquals(errorMessage, "Epic sadface: Username is required", "Username and pwd are required");
     }
 
-    @Test (groups = "slow")
+    @Test (description = "invalid data")
     public void userShouldNotBeAuthorisedUsingInvalidData() {
         authPage.open();
         authPage.inputLoginAndPassword("name", "password");
@@ -112,7 +114,7 @@ public class AuthTest extends BaseTest {  //14 tests to run
         assertEquals(errorMessage, "Epic sadface: Username and password do not match any user in this service");
     }
 
-    @Test
+    @Test(description = "locked user test")
     public void lockedUserShouldNotBeAuthorised(){
         authPage.open();
         authPage.inputLoginAndPassword("locked_out_user", "secret_sauce");
@@ -123,8 +125,13 @@ public class AuthTest extends BaseTest {  //14 tests to run
         Assert.assertTrue(authPage.errorMessageBlockIsClosed(), "Something went wrong!");
     }
 
-    @Test
-    public void ordinaryUserShouldBeAuthorisedUsingValidData() {  //todo - make it part of 'not to test group'
+    @Test(description = "ordinary user test", groups = "slow")
+    @Description("test of ordinary user entering")
+    @Owner("Vsevolod")
+    @Issue("projects")
+    @TmsLink("SWAGLABS")
+    @Link("https://www.saucedemo.com")
+    public void ordinaryUserShouldBeAuthorisedUsingValidData() {
         authPage.open();
         authPage.isPageOpened();
         authPage.inputLoginAndPassword("standard_user", "secret_sauce");

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test suite" parallel="tests" thread-count="1">
+    <test name="test 1 auth tests">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="login" value="standard_user"></parameter>
+
+        <classes>
+            <class name="tests.AuthTest" />
+        </classes>
+    </test>
+    <test name="test 2 inventory tests">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="login" value="standard_user"></parameter>
+        <classes>
+            <class name="tests.InventoryTest" />
+        </classes>
+    </test>
+    <test name="test 3 cart tests">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="login" value="standard_user"></parameter>
+        <classes>
+            <class name="tests.CartTest" />
+        </classes>
+    </test>
+    <test name="test 4 checkout step one tests">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="login" value="standard_user"></parameter>
+        <classes>
+            <class name="tests.CheckoutStepOneTest" />
+        </classes>
+    </test>
+    <test name="test 5 checkout step two tests">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="login" value="standard_user"></parameter>
+        <classes>
+            <class name="tests.CheckoutStepTwoTest" />
+        </classes>
+    </test>
+    <test name="test 6 checkout complete tests">
+        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="login" value="standard_user"></parameter>
+        <classes>
+            <class name="tests.CheckoutCompleteTest" />
+        </classes>
+    </test>
+</suite>
