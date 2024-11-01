@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Test suite" parallel="tests" thread-count="2">
     <!--<listeners>
-        <listener class-name="tests.AnnotationTransformer"/>
+        <listener class-name="tests.base.AnnotationTransformer"/>
     </listeners>-->
     <test name="test 1 auth tests">
         <parameter name="browser" value="chrome"></parameter>

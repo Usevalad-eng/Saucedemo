@@ -75,6 +75,7 @@ com/out/
 com/.idea/
 com/*.iml
 *.iml
+*.txt
 
 target/
 Saucedemo/target/
@@ -82,7 +83,7 @@ Saucedemo/out/
 Saucedemo/.idea/
 Sausedemo/.allure
 Saucedemo/*.iml
-
+Saucedemo/*.txt
 
 # mpeltonen/sbt-idea plugin
 .idea_modules/

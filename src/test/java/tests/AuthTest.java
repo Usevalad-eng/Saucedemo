@@ -6,6 +6,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import tests.base.BaseTest;
+import tests.utils.AllureUtils;
 
 import static org.testng.Assert.assertEquals;
 
@@ -137,5 +139,6 @@ public class AuthTest extends BaseTest {  //14 tests to run
         authPage.inputLoginAndPassword("standard_user", "secret_sauce");
         authPage.clickLogin();
         inventoryPage.inventoryPageIsOpen();
+        //AllureUtils.takeScreenshot(driver);
     }
 }

@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import tests.base.BaseTest;
+import tests.base.Retry;
 
 import static org.testng.Assert.assertEquals;
 
