@@ -1,6 +1,8 @@
 package pages;
 
 import io.qameta.allure.Step;
+import lombok.extern.log4j.Log4j;
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,6 +12,7 @@ import org.testng.Assert;
 
 import static pages.InventoryPage.PRODUCT_LABEL;
 
+@Log4j2
 public class AuthPage extends BasePage {
 
     public static final By USERNAME = By.id("user-name");
@@ -45,8 +48,9 @@ public class AuthPage extends BasePage {
         return driver.findElement(ERROR_MESSAGE).getText();
     }
 
-
+    @Step("Open app page")
     public void open() {
+        log.info("-open app page");
         driver.get(URL);
     }
 
